@@ -1,6 +1,13 @@
 
-/* WDD 130 - Home Page Enhancement */
+/* WDD 130 - Week 03 Home Page Enhancement */
 /* Author: Daniel Hagenimana */
+
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* Navigation */
 nav {
@@ -14,19 +21,23 @@ nav a {
     padding: 10px;
 }
 
-/* Main content */
+/* Main Content */
 h1 {
     color: #17365d;
+    padding: 1rem 0;
 }
 
 main {
     max-width: 840px;
+    margin: 0 auto;
 }
 
-/* Profile image */
+/* Profile Image */
 main img {
     width: 150px;
     height: auto;
+    float: right;
+    margin: 0 0 1rem 1rem;
     border: 1px solid #333;
     padding: 2px;
     box-shadow: 0 0 30px gray;
@@ -37,21 +48,37 @@ p {
     padding: 0;
 }
 
-/* Rwanda section */
-aside {
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0 / 0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
-    text-align: center;
+/* Temple List */
+main ul {
+    clear: both;
+    padding-left: 2rem;
 }
 
-/* Rwanda image */
+main li {
+    margin-bottom: 0.5rem;
+}
+
+/* Rwanda Section */
+aside {
+    width: 20rem;
+    text-align: center;
+    position: relative;
+}
+
 aside img {
     width: 200px;
     height: auto;
+    margin-top: 1.5rem;
+}
+
+aside h2 {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #17365d;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 3px white;
 }
 
 /* Footer */
@@ -59,4 +86,14 @@ footer {
     margin-top: 15px;
     border-top: 1px solid #000;
     text-align: center;
+    padding: 1rem;
+}
+
+/* Class Selectors */
+.box {
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    padding: 1rem;
+    background-color: #ddd;
+    color: #000;
 }
