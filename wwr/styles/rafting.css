@@ -1,8 +1,7 @@
 
-/* WDD 130 - Rafting Site */
+/* WDD 130 - Week 04 Rafting Website */
 /* Author: Daniel Hagenimana */
 
-/* Color Scheme and Fonts */
 :root {
     --primary-color: #123b5d;
     --secondary-color: #087e8b;
@@ -12,114 +11,113 @@
     --body-font: Arial, Helvetica, sans-serif;
 }
 
-/* Universal Selector */
+/* Universal Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* General Styles */
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background-color: #ffffff;
 }
 
-/* Page Width */
 header,
 main,
 footer {
     width: 840px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
-/* Headings */
 h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
-/* General Spacing */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+p {
+    line-height: 1.6;
 }
 
-/* Header */
+/* Header - CSS Grid */
 header {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    display: flex;
+    display: grid;
+    grid-template-columns: 150px 1fr;
     align-items: center;
-    justify-content: space-between;
-    padding: 12px;
+    background-color: var(--primary-color);
+    padding: 15px 30px;
+    gap: 20px;
 }
 
 header img {
     width: 100px;
     height: auto;
+    justify-self: center;
 }
 
+/* Navigation - CSS Flexbox */
 header nav {
     display: flex;
-    gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
 }
 
 header nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px;
+    padding: 12px;
+    text-align: center;
 }
 
 header nav a:hover {
     background-color: var(--secondary-color);
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-/* Hero Container */
+/* Hero Section */
 .hero {
     position: relative;
 }
 
-/* Hero Background Image */
 .hero > img {
     display: block;
     width: 100%;
     height: auto;
+    min-height: 350px;
+    object-fit: cover;
 }
 
 /* Hero Title Overlay */
 .hero h1 {
     position: absolute;
     top: 20px;
+    left: 0;
     width: 100%;
     padding: 16px;
     text-align: center;
-    background-color: rgb(36 55 70 / 85%);
+    background-color: rgb(36 55 70 / 90%);
     color: #ffffff;
     font-size: 2rem;
 }
 
-/* Mission Article Overlay */
+/* Mission Statement Overlay */
 .hero article {
     position: absolute;
     bottom: 20px;
-    left: 20px;
-    right: 20px;
+    left: 30px;
+    right: 30px;
     padding: 16px;
-    background-color: rgb(232 244 245 / 92%);
+    background-color: rgb(232 244 245 / 95%);
     color: var(--accent1-color);
-    border-radius: 5px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
 }
 
-/* Happy Client Image */
 .hero article img {
     float: right;
     width: 125px;
@@ -128,48 +126,152 @@ header nav a:hover {
     border: 2px solid var(--secondary-color);
 }
 
-/* Sections */
+.hero article p {
+    line-height: 1.5;
+}
+
+/* General Section Styles */
 section {
-    padding: 16px;
-    margin: 20px 0;
+    padding: 20px;
+    margin: 15px 0;
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: 15px;
-    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-section p {
-    line-height: 1.6;
+/* History Section - CSS Grid */
+.history {
+    background-color: var(--accent2-color);
 }
 
-/* Footer */
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.history-content p {
+    text-align: left;
+}
+
+.history-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+}
+
+/* Adventures Section */
+.adventures {
+    background-color: #f4f7f8;
+}
+
+/* Five Horizontal Images */
+.adventure-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.adventure-gallery figure {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.adventure-gallery figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--accent1-color);
+    line-height: 1.4;
+}
+
+/* Footer Layout */
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
     background-color: var(--primary-color);
     color: #ffffff;
-    padding: 16px;
-    text-align: center;
-    margin-top: 20px;
+    padding: 20px;
+    margin-top: 15px;
 }
 
 footer p {
-    margin: 8px;
+    font-size: 0.9rem;
 }
 
-/* Social Media */
+/* Social Media - Right Side */
 .socialmedia {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
     gap: 15px;
-    margin: 10px;
 }
 
 .socialmedia a {
     text-decoration: none;
+    display: inline-flex;
 }
 
 .socialmedia img {
     width: 30px;
     height: 30px;
+}
+
+/* Smaller Screens */
+@media (max-width: 650px) {
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero article {
+        position: static;
+        margin: 10px;
+    }
+
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+
+    .history-content img {
+        width: 200px;
+        justify-self: center;
+    }
+
+    .adventure-gallery {
+        flex-wrap: wrap;
+    }
+
+    .adventure-gallery figure {
+        flex: 1 1 30%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
